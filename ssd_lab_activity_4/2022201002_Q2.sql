@@ -1,0 +1,10 @@
+USE CUSTOMER_DB;
+DROP PROCEDURE IF EXISTS getName;
+DELIMITER $$
+CREATE PROCEDURE getName(IN city varchar(35))
+BEGIN 
+	SELECT CUST_NAME FROM customer WHERE WORKING_AREA=city;
+END$$
+
+
+call getName('Bangalore');
