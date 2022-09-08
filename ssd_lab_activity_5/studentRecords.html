@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Student Records</h1>
+                <label for="roll"></label>
+                <input type="text" placeholder="Roll Number" name="roll" id="roll" required />
+            
+                <label for="sname"></label>
+                <input type="text" placeholder="Name" name="sname" id="sname" required />
+            <button type="submit" class="button" onclick="onAddNewRow()">Add New</button>
+        <center>
+        <table id="sdetails">
+            <tbody></tbody>
+        </table>
+    </center>
+        <button type="delete" class="deleteB" onclick="onDeleteRow()">Delete Row</button>
+        
+    </div>
+    <script>
+        // var formElement = document.querySelector("form");
+        var tableBody = document.querySelector("tbody");
+        function onAddNewRow() {
+            var roll = document.getElementById("roll").value;
+            var name = document.getElementById("sname").value;
+            var table = document.getElementById("sdetails");
+            var rows = table.rows.length;
+
+            if(rows==0){
+                tableBody.innerHTML += `
+                    <tr>
+                        <th>Roll</th>
+                        <th>Name</th>
+                    </tr>
+              `;
+            }
+            if (roll != " ") {
+                tableBody.innerHTML += `
+                  <tr>
+                      <td>${roll}</td>
+                      <td>${name}</td>
+                  </tr>
+              `;
+                document.getElementById("roll").value = "";
+                document.getElementById("sname").value = "";
+            }
+        }
+        
+        function onDeleteRow(){
+            var table = document.getElementById("sdetails");
+            var rows = table.rows.length;
+            if(rows>1){
+                table.deleteRow(rows-1);
+                rows--;
+                if(rows==1){
+                    table.deleteRow(rows-1);
+                }
+            }
+            
+        }
+    </script>
+</body>
+
+</html>
