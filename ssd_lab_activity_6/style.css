@@ -1,0 +1,35 @@
+.required:after {
+    content: " *";
+    color: red;
+}
+
+#password-err,
+#username-err {
+    color: red;
+}
+
+#submit {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 10px;
+}
+
+.droptarget-div {
+    border: 1px solid black;
+    height: 300px;
+    width: 300px;
+}
+
+.team-member {
+    background-color: gainsboro;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    vertical-align: auto;
+}

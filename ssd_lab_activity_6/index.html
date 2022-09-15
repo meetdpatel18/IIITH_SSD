@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+
+    </title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="index.js"></script>
+</head>
+
+<body>
+    <center>
+        <h1>Team Form</h1>
+    </center>
+    <table>
+        <form action="" onsubmit="return getDetails()">
+            <tr>
+                <td><label class="required">Manager Name</label></td>
+                <td><input type="text" id="manager-name" required /></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><label class="required">Group Email</label></td>
+                <td><input type="email" id="email" required /></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><label class="required">Server Username</label></td>
+                <td><input type="text" id="server-username" onkeyup="checkUserName()" required /></td>
+                <td>
+                    <label id="username-err"></label>
+                </td>
+            </tr>
+            <tr>
+                <td> <label class="required">Server Password</label></td>
+                <td><input type="password" id="server-password" required /></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><label class="required">Confirm Password</label></td>
+                <td><input type="password" id="confirm-password" onkeyup="validatePassword()" required /></td>
+                <td>
+                    <label id="password-err"></label>
+                </td>
+            </tr>
+            <tr>
+                <td><label class="required">Team Lead</label></td>
+                <td><select name="team-lead" id="team-lead">
+                        <option value=""></option>
+                        <option value="Tony-Park">Tony-Park</option>
+                        <option value="Kim-Jong-Un">Kim-Jong-Un</option>
+                    </select></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><label>Team Members</label></td>
+                <td>
+                    <div class="droptarget-div" ondragover="dragoverHandler(event)" ondrop="dropHandler(event)">
+
+                        <p class="team-member" id="dragtarget-div1" ondragstart="dragstartHandler(event)"
+                            draggable="true">
+                            Tony
+                        </p>
+                        <p class="team-member" id="dragtarget-div2" ondragstart="dragstartHandler(event)"
+                            draggable="true">
+                            Steve
+                        </p>
+                        <p class="team-member" id="dragtarget-div3" ondragstart="dragstartHandler(event)"
+                            draggable="true">
+                            Bruce
+                        </p>
+                        <p class="team-member" id="dragtarget-div4" ondragstart="dragstartHandler(event)"
+                            draggable="true">
+                            Clint
+                        </p>
+                        <p class="team-member" id="dragtarget-div5" ondragstart="dragstartHandler(event)"
+                            draggable="true">
+                            Thor
+                        </p>
+                        <p class="team-member" id="dragtarget-div6" ondragstart="dragstartHandler(event)"
+                            draggable="true">
+                            Natasha
+                        </p>
+                    </div>
+                </td>
+                <td>
+                    <div class="droptarget-div" ondragover="dragoverHandler(event)" ondrop="dropHandler(event)">
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" id="submit" />
+                </td>
+            </tr>
+        </form>
+    </table>
+</body>
+
+</html>
